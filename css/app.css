@@ -3,17 +3,85 @@
   box-sizing: border-box;
 }
 
+@keyframes arrow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(-20deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
 header,
 footer {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  color: whitesmoke;
+  background-image: linear-gradient(
+    45deg,
+    #16d9e3 0%,
+    #30c7ec 47%,
+    #46aef7 100%
+  );
 }
 
 header h1 {
-  font-size: 80px;
+  font-size: 100px;
+}
+
+footer h1 {
+  font-size: 100px;
+}
+
+footer span {
+  display: inline-block;
+  animation-name: wave;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid whitesmoke;
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+  margin-top: 100px;
+  animation-name: arrow;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.arrow {
+  fill: whitesmoke;
+  height: 50px;
+  width: 50px;
 }
 
 .animated {
